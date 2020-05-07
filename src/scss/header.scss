@@ -1,0 +1,30 @@
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  &__nav {
+    &--list {
+      display: flex;
+      list-style-type: none;
+    }
+    &--link {
+      color: $text;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.2s linear;
+      &:hover {
+        color: $main;
+      }
+    }
+    &--item {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+}

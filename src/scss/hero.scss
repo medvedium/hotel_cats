@@ -1,0 +1,35 @@
+.hero {
+  max-width: $full-width-desktop;
+  margin: 0 auto;
+  background: url("../img/hero-bg.jpg") left center no-repeat;
+  padding: 153px 198px;
+  &__city {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  &__title {
+    font-family: Rubik;
+    font-weight: 700;
+    font-size: 62px;
+    margin: 0;
+    margin-top: 5px;
+    padding: 0;
+  }
+  &__description {
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+  &__btn {
+    background-color: $white;
+    color: $text;
+    &:after {
+      background: url("../img/paw-hero.svg");
+    }
+    &:hover {
+      background-color: $main;
+      color: $white;
+    }
+  }
+}

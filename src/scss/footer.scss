@@ -1,0 +1,57 @@
+.footer {
+  &__container {
+    max-width: calc(#{$desktop-container} - 200px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  &__main {
+    border-bottom: 1px solid $footer-border;
+  }
+  &__nav {
+    &--list {
+      display: flex;
+      list-style-type: none;
+    }
+    &--link {
+      color: $text;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.2s linear;
+      &:hover {
+        color: $main;
+      }
+    }
+    &--item {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+  &__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: calc(#{$desktop-container} - 200px);
+    height: 50px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  &__copy,
+  &__privacy {
+    color: $footer-privacy;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  &__privacy {
+    transition: all 0.2s linear;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}

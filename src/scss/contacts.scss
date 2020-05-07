@@ -1,0 +1,40 @@
+.contacts {
+  max-width: $full-width-desktop;
+  margin: 100px auto 0;
+  display: flex;
+  &__text {
+    flex-grow: 1;
+    background-color: $secondary;
+    padding: 60px 70px 0 198px;
+  }
+  &__map {
+    flex-shrink: 0;
+  }
+  &__title {
+    font-family: Rubik, sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    margin-bottom: 40px;
+  }
+  &__subtitle {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 10px;
+  }
+  &__content {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 25px;
+  }
+  &__social {
+    &--link {
+      margin-right: 15px;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
