@@ -1,15 +1,45 @@
 .header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-color: transparent;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    z-index: 1;
+  }
   &__container {
+    max-width: calc(#{$desktop-container} - 30px);
+    margin: 0 auto;
+    padding: 12px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    position: relative;
+    height: 76px;
+  }
+  &__logo {
+    flex: 0 0 60px;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+    & img {
+      max-width: 100%;
+      display: block;
+    }
   }
   &__nav {
     &--list {
       display: flex;
-      list-style-type: none;
+      position: relative;
+      z-index: 2;
     }
     &--link {
       color: $text;
@@ -22,8 +52,104 @@
       }
     }
     &--item {
-      &:not(:last-child) {
-        margin-right: 20px;
+      list-style: none;
+      margin-left: 20px;
+    }
+    &--mobile {
+      display: none;
+    }
+    &--phone {
+      font-family: Rubik;
+      color: $text;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+  &__burger {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  body.lock {
+    overflow: hidden;
+  }
+  .header {
+    &__container {
+      height: 62px;
+    }
+    &__logo {
+      flex: 0 0 40px;
+    }
+    &__burger {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 20px;
+      position: relative;
+      z-index: 3;
+      & span {
+        background-color: $text;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+      }
+      &:before,
+      &:after {
+        transition: all 0.2s linear;
+        content: '';
+        background-color: $text;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        left: 0;
+      }
+      &:before {
+        top: 0;
+      }
+      &:after {
+        bottom: 0;
+      }
+      &.active {
+        &:before {
+          transform: rotate(45deg);
+          top: 9px;
+        }
+        &:after {
+          transform: rotate(-45deg);
+          bottom: 9px;
+        }
+        & span {
+          transform: scale(0);
+        }
+      }
+    }
+    &__nav {
+      display: none;
+      &--mobile {
+        display: block;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: $secondary;
+        padding: 70px 10px 20px 10px;
+        transition: all 0.2s linear;
+        z-index: 2;
+        &.active {
+          top: 0;
+        }
+      }
+      &--list {
+        display: block;
+      }
+      &--item {
+        margin: 0 0 20px 0;
       }
     }
   }
