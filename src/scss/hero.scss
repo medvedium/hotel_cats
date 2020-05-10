@@ -1,7 +1,8 @@
 .hero {
   max-width: $full-width-desktop;
   margin: 0 auto;
-  background: url("../img/hero-bg.jpg") left center no-repeat;
+  background: url('../img/hero-bg.jpg') left center no-repeat;
+  background-size: cover;
   padding: 153px 198px;
   &__city {
     font-size: 14px;
@@ -25,11 +26,29 @@
     background-color: $white;
     color: $text;
     &:after {
-      background: url("../img/paw-hero.svg");
+      background: url('../img/paw-hero.svg');
     }
     &:hover {
       background-color: $main;
       color: $white;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .hero {
+    background-image: url('../img/hero-bg-tablet.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 530px;
+    &__btn {
+      margin-top: 0;
+    }
+    &__description {
+      text-align: center;
     }
   }
 }
