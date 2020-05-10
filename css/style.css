@@ -27,6 +27,14 @@
 @font-face {
   font-family: "Rubik";
   font-display: swap;
+  src: url("../fonts/Rubik-Regular.woff") format("woff"), url("../fonts/Rubik-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-display: swap;
   src: url("../fonts/Rubik-Bold.woff") format("woff"), url("../fonts/Rubik-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
@@ -80,7 +88,7 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #1a212f;
 }
 
@@ -147,7 +155,7 @@ h6 {
 }
 
 .btn:after {
-  content: "";
+  content: '';
   display: block;
   width: 36px;
   height: 36px;
@@ -253,6 +261,15 @@ h6 {
   color: #ff7236;
 }
 
+.header__nav--link-mobile {
+  color: #1a212f;
+  text-decoration: none;
+  font-family: Rubik;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+
 .header__nav--item {
   list-style: none;
   margin-left: 20px;
@@ -270,6 +287,10 @@ h6 {
   line-height: 19px;
 }
 
+.header__nav--social {
+  margin-top: 25px;
+}
+
 .header__burger {
   display: none;
 }
@@ -277,7 +298,10 @@ h6 {
 .hero {
   max-width: 1366px;
   margin: 0 auto;
-  background: url("../img/hero-bg.jpg") left center no-repeat;
+  background-image: url("../img/hero-bg.jpg");
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 153px 198px;
 }
 
@@ -758,12 +782,14 @@ h6 {
       -ms-flex-positive: 1;
           flex-grow: 1;
   background-color: #fac663;
-  padding: 60px 70px 0 198px;
+  padding: 60px 0 0 198px;
 }
 
 .contacts__map {
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  width: 798px;
+  height: 568px;
 }
 
 .contacts__title {
@@ -794,6 +820,11 @@ h6 {
 
 .contacts__social--link:hover {
   opacity: 0.7;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
 }
 
 .footer__container {
@@ -875,6 +906,71 @@ h6 {
   cursor: pointer;
 }
 
+@media (max-width: 1265px) {
+  .contacts__text {
+    padding-left: 45px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .contacts__text {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+
+  .contacts__map {
+    width: 50%;
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    padding: 0 45px;
+  }
+
+  .hero {
+    background-image: url("../img/hero-bg-tablet.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 530px;
+  }
+
+  .hero__btn {
+    margin-top: 0;
+  }
+
+  .hero__description {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .contacts__map {
+    width: 100vw;
+    height: 100vw;
+  }
+}
+
 @media (max-width: 767px) {
   body.lock {
     overflow: hidden;
@@ -885,9 +981,7 @@ h6 {
   }
 
   .header__logo {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 40px;
-            flex: 0 0 40px;
+    width: 46px;
   }
 
   .header__burger {
@@ -982,4 +1076,9 @@ h6 {
   }
 }
 
-.webp .hero{ background: url(../img/hero-bg.webp) left center no-repeat; }
+.webp .hero{ background-image: url(../img/hero-bg.webp); }
+
+@media (max-width: 991px){
+
+  .webp .hero{ background-image: url(../img/hero-bg-tablet.webp); }
+}
