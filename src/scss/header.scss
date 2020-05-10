@@ -50,6 +50,14 @@
       &:hover {
         color: $main;
       }
+      &-mobile {
+        color: $text;
+        text-decoration: none;
+        font-family: Rubik;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+      }
     }
     &--item {
       list-style: none;
@@ -64,6 +72,9 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 19px;
+    }
+    &--social {
+      margin-top: 25px;
     }
   }
   &__burger {

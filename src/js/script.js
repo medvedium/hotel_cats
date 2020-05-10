@@ -45,7 +45,7 @@ $(document).ready(function () {
 
   $(document).on(
     'click',
-    '.header__nav--link, .footer__nav--link',
+    '.header__nav--link, .footer__nav--link, .header__nav--link-mobile',
     function () {
       let linkID = $(this).attr('href');
       $('html, body').animate(
@@ -54,7 +54,7 @@ $(document).ready(function () {
         },
         'slow',
       );
-      if ($(this).hasClass('header__nav--link')) {
+      if ($(this).hasClass('header__nav--link-mobile')) {
         $('.header__burger, .header__nav--mobile').toggleClass('active');
         $('body').toggleClass('lock');
       }

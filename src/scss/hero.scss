@@ -1,7 +1,9 @@
 .hero {
   max-width: $full-width-desktop;
   margin: 0 auto;
-  background: url('../img/hero-bg.jpg') left center no-repeat;
+  background-image: url('../img/hero-bg.jpg');
+  background-position: left center;
+  background-repeat: no-repeat;
   background-size: cover;
   padding: 153px 198px;
   &__city {
