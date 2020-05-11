@@ -1,6 +1,4 @@
 .reviews {
-  max-width: $rooms-slide-width;
-  margin: 0 auto;
   position: relative;
   overflow: hidden;
   padding-bottom: 40px;
@@ -63,5 +61,16 @@
     font-size: 14px;
     line-height: 17px;
     color: $text-author;
+  }
+}
+@media (max-width: 768px) {
+  .reviews {
+    &__pseudo {
+      width: 40%;
+    }
+    &__item {
+      max-width: 100%;
+      width: 100%;
+    }
   }
 }

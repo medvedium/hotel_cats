@@ -104,6 +104,11 @@ h6 {
     border: 1px solid $main;
   }
 }
+@media (max-width: 991px) {
+  .btn {
+    font-size: 16px;
+  }
+}
 
 .section__title {
   font-family: Rubik, sans-serif;

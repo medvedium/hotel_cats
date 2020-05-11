@@ -87,6 +87,7 @@
     overflow: hidden;
   }
   .header {
+    position: fixed;
     &__container {
       height: 62px;
     }
@@ -98,7 +99,6 @@
       position: relative;
       width: 30px;
       height: 20px;
-      position: relative;
       z-index: 3;
       & span {
         background-color: $text;
