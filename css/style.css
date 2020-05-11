@@ -487,8 +487,6 @@ h6 {
 }
 
 .reviews {
-  max-width: 1030px;
-  margin: 0 auto;
   position: relative;
   overflow: hidden;
   padding-bottom: 40px;
@@ -817,6 +815,10 @@ h6 {
 }
 
 @media (max-width: 991px) {
+  .btn {
+    font-size: 16px;
+  }
+
   .container {
     padding-left: 45px;
     padding-right: 45px;
@@ -914,6 +916,15 @@ h6 {
     width: 100%;
   }
 
+  .reviews__pseudo {
+    width: 40%;
+  }
+
+  .reviews__item {
+    max-width: 100%;
+    width: 100%;
+  }
+
   .contacts {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -922,10 +933,12 @@ h6 {
   }
 
   .contacts__map {
-    padding-left: 20px;
-    padding-right: 20px;
     width: 100vw;
     height: 100vw;
+  }
+
+  .footer__logo {
+    width: 46px;
   }
 
   .footer__container {
@@ -936,25 +949,48 @@ h6 {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 
   .footer__nav--list {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
 
   .footer__nav--item {
-    width: 50%;
+    width: 40%;
+    margin-top: 20px;
+  }
+
+  .footer__text {
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .footer__privacy {
+    margin-top: 15px;
   }
 }
 
 @media (max-width: 500px) {
   body.lock {
     overflow: hidden;
+  }
+
+  .header {
+    position: fixed;
   }
 
   .header__container {
@@ -970,7 +1006,6 @@ h6 {
     position: relative;
     width: 30px;
     height: 20px;
-    position: relative;
     z-index: 3;
   }
 
