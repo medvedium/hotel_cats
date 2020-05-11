@@ -69,14 +69,12 @@ $(document).ready(function () {
     slidesToScroll: 1,
     dots: true,
     arrows: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 575,
+        breakpoint: 889,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
           arrows: false,
         },
       },
@@ -88,5 +86,17 @@ $(document).ready(function () {
     slidesToScroll: 1,
     dots: true,
     arrows: true,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+          variableWidth: false,
+          centerMode: true,
+        },
+      },
+    ],
   });
 });
