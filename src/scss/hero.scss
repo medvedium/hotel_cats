@@ -60,5 +60,14 @@
   .hero {
     padding-top: 115px;
     padding-bottom: 200px;
+    &__city {
+      font-size: 12px;
+    }
+    &__title {
+      font-size: 44px;
+    }
+    &__description {
+      font-size: 16px;
+    }
   }
 }

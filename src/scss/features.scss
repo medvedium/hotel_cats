@@ -51,8 +51,15 @@
 }
 @media (max-width: 991px) {
   .features {
+    &__pseudo {
+      width: 60%;
+    }
     &__item {
       width: 45%;
+    }
+    &__icon {
+      transform: scale(0.8333);
+      margin-bottom: 0;
     }
   }
 }
@@ -60,9 +67,23 @@
   .features {
     &__item {
       width: 100%;
+      padding: 10px 25px 25px;
+      margin: 0;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
     }
     &__pseudo {
-      transform: scale(0.8);
+      width: 40%;
+    }
+    &__icon {
+      transform: scale(0.6666);
+    }
+    &__name {
+      font-size: 18px;
+    }
+    &__description {
+      font-size: 15px;
     }
   }
 }
