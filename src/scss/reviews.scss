@@ -10,6 +10,8 @@
   &__inner {
     display: flex;
     min-width: 0;
+    position: relative;
+    padding-bottom: 80px;
   }
   &__pseudo {
     position: absolute;

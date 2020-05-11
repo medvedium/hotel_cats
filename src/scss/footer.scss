@@ -55,3 +55,20 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .footer {
+    &__container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &__nav {
+      &--list {
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      &--item {
+        width: 50%;
+      }
+    }
+  }
+}
