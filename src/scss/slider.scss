@@ -1,51 +1,56 @@
-  .slick-list {
-    overflow: hidden;
+.slick-list {
+  overflow: hidden;
+}
+.slick-track {
+  display: flex;
+}
+.slick-arrow {
+  position: absolute;
+  bottom: 0;
+  font-size: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.25);
+  transition: all 0.2s linear;
+  &:hover {
+    box-shadow: 0px 2px 12px rgba(73, 52, 43, 0.35);
   }
-  .slick-track {
-    display: flex;
-  }
-  .slick-arrow {
-    position: absolute;
-    bottom: 0;
-    font-size: 0;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.25);
-    transition: all 0.2s linear;
-    &:hover {
-      box-shadow: 0px 2px 12px rgba(73, 52, 43, 0.35);
-    }
-  }
-  .slick-arrow.slick-prev {
-    right: 46px;
-    background: url('../img/prev.svg') center no-repeat, #fff;
-  }
-  .slick-arrow.slick-next {
-    right: 0;
-    background: url('../img/next.svg') center no-repeat, #fff;
-  }
-  .slick-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .slick-dots li {
-    list-style: none;
-    margin: 0 10px;
-  }
-  .slick-dots li.slick-active button {
-    background-color: $secondary;
-  }
-  .slick-dots li button {
-    font-size: 0;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: $unactive-dot;
-  }
-
+}
+.slick-arrow.slick-prev {
+  right: 46px;
+  background-image: url('../img/prev.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: $white;
+}
+.slick-arrow.slick-next {
+  right: 0;
+  background-image: url('../img/next.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: $white;
+}
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slick-dots li {
+  list-style: none;
+  margin: 0 10px;
+}
+.slick-dots li.slick-active button {
+  background-color: $secondary;
+}
+.slick-dots li button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $unactive-dot;
+}
