@@ -52,7 +52,7 @@ $(document).ready(function () {
       let linkID = $(this).attr('href');
       $('html, body').animate(
         {
-          scrollTop: $(linkID).offset().top,
+          scrollTop: $(linkID).offset().top - 62,
         },
         'slow',
       );
