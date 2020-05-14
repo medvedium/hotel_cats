@@ -81,18 +81,16 @@ $(document).ready(function () {
   $('.reviews__inner').slick({
     infinite: true,
     slidesToShow: 2,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     dots: true,
     arrows: true,
-    variableWidth: true,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 575,
         settings: {
-          arrows: false,
           slidesToShow: 1,
-          variableWidth: false,
-          centerMode: true,
+          slidesToScroll: 1,
+          arrows: false,
         },
       },
     ],
