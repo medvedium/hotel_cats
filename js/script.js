@@ -20,6 +20,8 @@ testWebP(function (support) {
   }
 });
 
+// Подключение карт 2Gis
+
 let map;
 let myIcon;
 
@@ -39,29 +41,55 @@ DG.then(function () {
     .bindPopup('Санкт-Петербург, ул Большая Конюшенная, д 19');
 });
 
+// Burger-menu
+
 $(document).ready(function () {
   $('.header__burger').click(function (event) {
     $('.header__burger, .header__nav--mobile').toggleClass('active');
     $('body').toggleClass('lock');
   });
 
-  $(document).on(
-    'click',
-    '.header__nav--link, .footer__nav--link, .header__nav--link-mobile',
-    function () {
-      let linkID = $(this).attr('href');
+  $('.header__nav--link, .footer__nav--link, .header__nav--link-mobile').click(function () {
+    let linkID = $(this).attr('href');
+    if ($('.header__burger').hasClass('active')) {
       $('html, body').animate(
         {
           scrollTop: $(linkID).offset().top - 62,
         },
         'slow',
       );
-      if ($(this).hasClass('header__nav--link-mobile')) {
-        $('.header__burger, .header__nav--mobile').toggleClass('active');
-        $('body').toggleClass('lock');
-      }
-    },
-  );
+    } else {
+      $('html, body').animate(
+        {
+          scrollTop: $(linkID).offset().top,
+        },
+        'slow',
+      );
+    }
+    //Скрытие мобильного меню при нажатии ссылки
+    if ($(this).hasClass('header__nav--link-mobile')) {
+      $('.header__burger, .header__nav--mobile').toggleClass('active');
+      $('body').toggleClass('lock');
+    };
+  });
+
+  // $(document).on(
+  //   'click',
+  //   '.header__nav--link, .footer__nav--link, .header__nav--link-mobile',
+  //   function () {
+  //     let linkID = $(this).attr('href');
+  //     $('html, body').animate(
+  //       {
+  //         scrollTop: $(linkID).offset().top - 62,
+  //       },
+  //       'slow',
+  //     );
+  //     if ($(this).hasClass('header__nav--link-mobile')) {
+  //       $('.header__burger, .header__nav--mobile').toggleClass('active');
+  //       $('body').toggleClass('lock');
+  //     }
+  //   },
+  // );
 
   $('.rooms__inner').slick({
     infinite: true,
@@ -69,7 +97,7 @@ $(document).ready(function () {
     slidesToScroll: 1,
     dots: true,
     arrows: true,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
       {
@@ -83,18 +111,16 @@ $(document).ready(function () {
   $('.reviews__inner').slick({
     infinite: true,
     slidesToShow: 2,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     dots: true,
     arrows: true,
-    variableWidth: true,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 575,
         settings: {
-          arrows: false,
           slidesToShow: 1,
-          variableWidth: false,
-          centerMode: true,
+          slidesToScroll: 1,
+          arrows: false,
         },
       },
     ],
