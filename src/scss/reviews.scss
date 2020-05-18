@@ -11,7 +11,6 @@
     display: flex;
     min-width: 0;
     position: relative;
-    // padding-bottom: 80px;
   }
   &__pseudo {
     position: absolute;
@@ -64,6 +63,10 @@
     font-size: 14px;
     line-height: 17px;
     color: $text-author;
+    & .slick-track {
+      padding-top: 20px;
+      padding-left: 8px;
+    }
   }
 }
 @media (max-width: 768px) {
@@ -77,6 +80,14 @@
       max-width: 100%;
       width: 100%;
       margin-left: 0;
+    }
+    
+  }
+}
+@media (max-width: 839px) {
+  .reviews {
+    &__author {
+      display: none;
     }
   }
 }

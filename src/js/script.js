@@ -1,6 +1,8 @@
 @@include('jquery.min.js');
 @@include('slick.min.js');
 
+// Gulp-webP плагин
+
 function testWebP(callback) {
   var webP = new Image();
   webP.onload = webP.onerror = function () {
@@ -17,6 +19,8 @@ testWebP(function (support) {
     document.querySelector('body').classList.add('no-webp');
   }
 });
+
+// Подключение карт 2Gis
 
 let map;
 let myIcon;
@@ -37,29 +41,51 @@ DG.then(function () {
     .bindPopup('Санкт-Петербург, ул Большая Конюшенная, д 19');
 });
 
+
 $(document).ready(function () {
+
+  // Burger-menu
+
   $('.header__burger').click(function (event) {
     $('.header__burger, .header__nav--mobile').toggleClass('active');
     $('body').toggleClass('lock');
   });
 
-  $(document).on(
-    'click',
-    '.header__nav--link, .footer__nav--link, .header__nav--link-mobile',
-    function () {
-      let linkID = $(this).attr('href');
+  // Плавная прокрутка к пункту меню 
+
+  $('.header__nav--link, .footer__nav--link, .header__nav--link-mobile').click(function () {
+    let linkID = $(this).attr('href');
+    if ($('.header__burger').hasClass('active')) {
+
+      // Прокрутка из мобильного меню
+
       $('html, body').animate(
         {
           scrollTop: $(linkID).offset().top - 62,
         },
         'slow',
       );
-      if ($(this).hasClass('header__nav--link-mobile')) {
-        $('.header__burger, .header__nav--mobile').toggleClass('active');
-        $('body').toggleClass('lock');
-      }
-    },
-  );
+    } else {
+
+      // Прокрутка из полноценного меню
+
+      $('html, body').animate(
+        {
+          scrollTop: $(linkID).offset().top,
+        },
+        'slow',
+      );
+    }
+
+    //Скрытие мобильного меню при нажатии ссылки
+
+    if ($(this).hasClass('header__nav--link-mobile')) {
+      $('.header__burger, .header__nav--mobile').toggleClass('active');
+      $('body').toggleClass('lock');
+    };
+  });
+
+  // Слайдер раздела "Номера"
 
   $('.rooms__inner').slick({
     infinite: true,
@@ -78,6 +104,9 @@ $(document).ready(function () {
       },
     ],
   });
+
+  // Слайдер раздела "Отзывы"
+
   $('.reviews__inner').slick({
     infinite: true,
     slidesToShow: 2,
