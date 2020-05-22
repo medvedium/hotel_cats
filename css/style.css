@@ -865,13 +865,13 @@ h6 {
 }
 
 .rooms-catalog__filter {
-  -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+  -ms-flex-preferred-size: 290px;
+      flex-basis: 290px;
 }
 
 .rooms-catalog__inner {
-  -ms-flex-preferred-size: 75%;
-      flex-basis: 75%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -886,7 +886,8 @@ h6 {
 }
 
 .rooms-catalog__item {
-  width: 32%;
+  width: 31%;
+  min-width: 270px;
   -ms-flex-item-align: stretch;
       align-self: stretch;
   margin-bottom: 30px;
@@ -1020,10 +1021,12 @@ h6 {
 }
 
 .rooms-form__submit {
-  display: none;
+  width: 185px;
+  background-color: #fac663;
 }
 
 .rooms-form__reset {
+  width: 185px;
   margin-top: 15px;
   cursor: pointer;
   -webkit-transition: all .2s linear;
@@ -1039,6 +1042,12 @@ h6 {
   .contacts__text {
     padding-left: 45px;
     padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 1170px) {
+  .rooms-catalog__item {
+    width: 49%;
   }
 }
 
@@ -1118,10 +1127,6 @@ h6 {
 
   .rooms__image {
     width: 80%;
-  }
-
-  .rooms-catalog__item {
-    width: 49%;
   }
 }
 
