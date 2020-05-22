@@ -36,17 +36,18 @@
 
     }
     &__filter {
-        flex-basis: 25%;
+        flex-basis: 290px;
     }
     &__inner {
-        flex-basis: 75%;
+        flex-basis: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: stretch;
     }
     &__item {
-        width: 32%;
+        width: 31%;
+        min-width: 270px;
         align-self: stretch;
         margin-bottom: 30px;
         box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
@@ -154,9 +155,11 @@
         border-radius: 25px;
     }
     &__submit {
-        display: none;
+        width: 185px;
+        background-color: $secondary;
     }
     &__reset {
+        width: 185px;
         margin-top: 15px;
         cursor: pointer;
         transition: all .2s linear;
@@ -166,7 +169,7 @@
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1170px) {
     .rooms-catalog {
         &__item {
             width: 49%;
