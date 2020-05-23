@@ -1,225 +1,227 @@
 .rooms-catalog {
-    max-width: $desktop-container;
-    margin: 0 auto;
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 130px 30px 0 15px;
+  max-width: $desktop-container;
+  margin: 0 auto;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 130px 30px 0 15px;
+  }
+  &__title {
+    font-family: Rubik;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 43px;
+  }
+  &__button {
+    padding: 10px 20px;
+    background-color: $white;
+    border-radius: 25px;
+    box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
+    &--filter {
+      display: none;
+      & img {
+        margin-right: 5px;
+      }
     }
-    &__title {
-        font-family: Rubik;
-        font-weight: bold;
-        font-size: 36px;
-        line-height: 43px;
+    &--sort {
+      margin-left: 30px;
+      appearance: none;
+      cursor: pointer;
     }
-    &__button{
-        padding: 10px 20px;
+  }
+  &__wrap {
+    display: flex;
+    padding: 50px 15px 0;
+  }
+  &__filter {
+    flex-basis: 290px;
+  }
+  &__inner {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  &__item {
+    width: 31%;
+    min-width: 270px;
+    align-self: stretch;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+    transition: all 0.2s linear;
+    &--inner {
+      padding: 20px;
+      width: 100%;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border: 1px solid $unactive-dot;
+      border-top: none;
+    }
+    &--img {
+      width: 100%;
+    }
+    &--name {
+      font-family: Rubik;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      margin-bottom: 15px;
+    }
+    &--content {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      margin-bottom: 10px;
+    }
+    &--price {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      margin-left: 5px;
+    }
+    &--button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white;
+      background-color: $main;
+      border-radius: 25px;
+      padding: 14px 0;
+      transition: all 0.2s linear;
+      border: 2px solid transparent;
+      position: relative;
+      margin-top: 20px;
+      &::after {
+        content: '';
+        display: block;
+        width: 36px;
+        height: 36px;
+        background: url('../img/paw-hero.svg');
+        position: absolute;
+        top: 3px;
+        right: 5px;
+      }
+      &:hover {
+        color: $main;
         background-color: $white;
-        border-radius: 25px;
-        box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
-        &--filter {
-            display: none;
-            & img {
-                margin-right: 5px;
-            }
-        }
-        &--sort {
-            margin-left: 30px;
-            appearance: none;
-            cursor: pointer;
-        }
+        border: 2px solid $main;
+      }
     }
-    &__wrap {
-        display: flex;
-        padding: 50px 15px 0;
-
+    &:hover {
+      box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.65);
     }
-    &__filter {
-        flex-basis: 290px;
-    }
-    &__inner {
-        flex-basis: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: stretch;
-    }
-    &__item {
-        width: 31%;
-        min-width: 270px;
-        align-self: stretch;
-        margin-bottom: 30px;
-        box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
-        transition: all .2s linear;
-        &--inner {
-            padding: 20px;
-            width: 100%;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-            border: 1px solid $unactive-dot;
-            border-top: none;
-        }
-        &--img {
-            width: 100%;
-        }
-        &--name {
-            font-family: Rubik;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 24px;
-            margin-bottom: 15px;
-        }
-        &--content {
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 17px;
-            margin-bottom: 10px;
-        }
-        &--price {
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 22px;
-            margin-left: 5px;
-        }
-        &--button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: $white;
-            background-color: $main;
-            border-radius: 25px;
-            padding: 14px 0;
-            transition: all .2s linear;
-            border: 2px solid transparent;
-            position: relative;
-            margin-top: 20px;
-            &::after {
-                content: '';
-                display: block;
-                width: 36px;
-                height: 36px;
-                background: url('../img/paw-hero.svg');
-                position: absolute;
-                top: 3px;
-                right: 5px;
-            }
-            &:hover {
-                color: $main;
-                background-color: $white;
-                border: 2px solid $main;
-            }
-        }
-        &:hover {
-            box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.65);
-        }
-    }
+  }
 }
 .rooms-form {
-    & label {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-        margin-left: 5px;
+  & label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin-left: 5px;
+  }
+  &__wrap {
+    margin-bottom: 30px;
+  }
+  &__title {
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  &__inputs {
+    & input:first-child {
+      margin-right: 5px;
     }
-    &__wrap {
-        margin-bottom: 30px;
+  }
+  &__row {
+    margin-bottom: 15px;
+  }
+  &__input {
+    padding: 5px;
+    width: 100px;
+    height: 24px;
+    border: 1px solid $unactive-dot;
+  }
+  &__btn {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 10px 35px;
+    border: 2px solid $secondary;
+    background-color: $white;
+    border-radius: 25px;
+  }
+  &__submit {
+    width: 185px;
+    background-color: $secondary;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
     }
-    &__title {
-        margin-bottom: 15px;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 19px;
+  }
+  &__reset {
+    width: 185px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    &:hover {
+      background-color: $secondary;
     }
-    &__inputs {
-        & input:first-child {
-            margin-right: 5px;
-        }
-    }
-    &__row {
-        margin-bottom: 15px;
-    }
-    &__input {
-        padding: 5px;
-        width: 100px;
-        height: 24px;
-        border: 1px solid $unactive-dot;
-    }
-    &__btn {
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 17px;
-        padding: 10px 35px;
-        border: 2px solid $secondary;
-        background-color: $white;
-        border-radius: 25px;
-    }
-    &__submit {
-        width: 185px;
-        background-color: $secondary;
-    }
-    &__reset {
-        width: 185px;
-        margin-top: 15px;
-        cursor: pointer;
-        transition: all .2s linear;
-        &:hover {
-            background-color: $secondary;
-        }
-    }
+  }
 }
 
 @media (max-width: 1170px) {
-    .rooms-catalog {
-        &__item {
-            width: 49%;
-        }
+  .rooms-catalog {
+    &__item {
+      width: 49%;
     }
+  }
 }
 
 @media (max-width: 914px) {
-    .rooms-catalog {
-        &__filter {
-            display: none;
-        }
-        &__inner {
-            flex-basis: 100%;
-        }
-        &__button {
-            &--filter {
-                display: inline-block;
-            }
-        }
+  .rooms-catalog {
+    &__filter {
+      display: none;
     }
+    &__inner {
+      flex-basis: 100%;
+    }
+    &__button {
+      &--filter {
+        display: inline-block;
+      }
+    }
+  }
 }
 
 @media (max-width: 605px) {
-    .rooms-catalog {
-        &__header {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        &__buttons {
-            display: flex;
-            align-self: stretch;
-            justify-content: space-between;
-            padding-top: 30px;
-        }
-        &__item {
-            width: 100%;
-        }
-        
+  .rooms-catalog {
+    &__header {
+      flex-direction: column;
+      align-items: flex-start;
     }
+    &__buttons {
+      display: flex;
+      align-self: stretch;
+      justify-content: space-between;
+      padding-top: 30px;
+    }
+    &__item {
+      width: 100%;
+    }
+  }
 }
 
 @media (max-width: 500px) {
-    .rooms-catalog {
-        &__header {
-            padding-top: 80px;
-        }
-        &__title {
-            font-size: 28px;
-            line-height: 33px;
-        }
+  .rooms-catalog {
+    &__header {
+      padding-top: 80px;
     }
+    &__title {
+      font-size: 28px;
+      line-height: 33px;
+    }
+  }
 }
