@@ -94,11 +94,11 @@
       position: relative;
       margin-top: 20px;
       &::after {
-        content: '';
+        content: "";
         display: block;
         width: 36px;
         height: 36px;
-        background: url('../img/paw-hero.svg');
+        background: url("../img/paw-hero.svg");
         position: absolute;
         top: 3px;
         right: 5px;

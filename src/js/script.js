@@ -41,9 +41,7 @@ DG.then(function () {
     .bindPopup('Санкт-Петербург, ул Большая Конюшенная, д 19');
 });
 
-
 $(document).ready(function () {
-
   // Burger-menu
 
   $('.header__burger').click(function (event) {
@@ -51,39 +49,39 @@ $(document).ready(function () {
     $('body').toggleClass('lock');
   });
 
-  // Плавная прокрутка к пункту меню 
+  // Плавная прокрутка к пункту меню
 
-  $('.header__nav--link, .footer__nav--link, .header__nav--link-mobile').click(function () {
-    let linkID = $(this).attr('href');
-    if ($('.header__burger').hasClass('active')) {
+  $('.header__nav--link, .footer__nav--link, .header__nav--link-mobile').click(
+    function () {
+      let linkID = $(this).attr('href');
+      if ($('.header__burger').hasClass('active')) {
+        // Прокрутка из мобильного меню
 
-      // Прокрутка из мобильного меню
+        $('html, body').animate(
+          {
+            scrollTop: $(linkID).offset().top - 62,
+          },
+          'slow',
+        );
+      } else {
+        // Прокрутка из полноценного меню
 
-      $('html, body').animate(
-        {
-          scrollTop: $(linkID).offset().top - 62,
-        },
-        'slow',
-      );
-    } else {
+        $('html, body').animate(
+          {
+            scrollTop: $(linkID).offset().top,
+          },
+          'slow',
+        );
+      }
 
-      // Прокрутка из полноценного меню
+      //Скрытие мобильного меню при нажатии ссылки
 
-      $('html, body').animate(
-        {
-          scrollTop: $(linkID).offset().top,
-        },
-        'slow',
-      );
-    }
-
-    //Скрытие мобильного меню при нажатии ссылки
-
-    if ($(this).hasClass('header__nav--link-mobile')) {
-      $('.header__burger, .header__nav--mobile').toggleClass('active');
-      $('body').toggleClass('lock');
-    };
-  });
+      if ($(this).hasClass('header__nav--link-mobile')) {
+        $('.header__burger, .header__nav--mobile').toggleClass('active');
+        $('body').toggleClass('lock');
+      }
+    },
+  );
 
   // Слайдер раздела "Номера"
 
