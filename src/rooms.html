@@ -5,8 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="icon" href="img/favicon.png" type="image/png" />
-  <link rel="shortcut icon" href="img/favicon.png" type="image/png" />
+
+  <!-- Favicon start -->
+
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#08162a">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Favicon end -->
+
   <link rel="stylesheet" href="css/style.min.css" />
   <title>Котейка</title>
 </head>
@@ -20,10 +33,10 @@
         <button class="rooms-catalog__button rooms-catalog__button--filter">
           <img src="img/filter.svg" alt="">Фильтры</button>
         <select name="sort" id="sort" class="rooms-catalog__button rooms-catalog__button--sort">
-          <option value="squareUp"><img src="img/sort-up.svg" alt="">По площади</option>
-          <option value="squareDown">По площади</option>
-          <option value="priceUp"><img src="img/sort-up.svg" alt="">По цене</option>
-          <option value="priceDown">По цене</option>
+          <option value="squareUp">&#8593;&nbsp;По площади</option>
+          <option value="squareDown">&#8595;&nbsp;По площади</option>
+          <option value="priceUp">&#8593;&nbsp;По цене</option>
+          <option value="priceDown">&#8595;&nbsp;По цене</option>
         </select>
       </div>
     </div>
@@ -41,50 +54,50 @@
 
             <div class="rooms-form__title">Площадь</div>
             <div class="rooms-form__row">
-              <input type="checkbox" name="square-1" id="square-1" />
+              <input type="checkbox" name="square-1" id="square-1" class="custom-checkbox" />
               <label for="square-1">0,63 м2</label>
             </div>
             <div class="rooms-form__row">
-              <input type="checkbox" name="square-2" id="square-2" />
+              <input type="checkbox" name="square-2" id="square-2" class="custom-checkbox" />
               <label for="square-2">0,90 м2</label>
             </div>
             <div class="rooms-form__row">
-              <input type="checkbox" name="square-3" id="square-3" />
+              <input type="checkbox" name="square-3" id="square-3" class="custom-checkbox" />
               <label for="square-3">1,13 м2</label>
             </div>
             <div class="rooms-form__row">
-              <input type="checkbox" name="square-4" id="square-4" />
+              <input type="checkbox" name="square-4" id="square-4" class="custom-checkbox" />
               <label for="square-4">1,56 м2</label>
             </div>
             <div class="rooms-form__row">
-              <input type="checkbox" name="square-5" id="square-5" />
+              <input type="checkbox" name="square-5" id="square-5" class="custom-checkbox" />
               <label for="square-5">2,56 м2</label>
             </div>
             <div class="rooms-form__row">
-              <input type="checkbox" name="square-6" id="square-6" />
+              <input type="checkbox" name="square-6" id="square-6" class="custom-checkbox" />
               <label for="square-6">2,88 м2</label>
             </div>
           </div>
           <div class="rooms-form__wrap">
             <div class="rooms-form__title">Оснащение номера</div>
             <div class="rooms-form__row">
-              <input type="checkbox" name="equipment-1" id="equipment-1" />
+              <input type="checkbox" name="equipment-1" id="equipment-1" class="custom-checkbox" />
               <label for="equipment-1">Пустой номер</label>
             </div>
             <div class="rooms-form__row">
-              <input type="checkbox" name="equipment-2" id="equipment-2" />
+              <input type="checkbox" name="equipment-2" id="equipment-2" class="custom-checkbox" />
               <label for="equipment-2">Лежак</label>
             </div>
             <div class="rooms-form__row">
-              <input type="checkbox" name="equipment-3" id="equipment-3" />
+              <input type="checkbox" name="equipment-3" id="equipment-3" class="custom-checkbox" />
               <label for="equipment-3">Когтеточка</label>
             </div>
             <div class="rooms-form__row">
-              <input type="checkbox" name="equipment-4" id="equipment-4" />
+              <input type="checkbox" name="equipment-4" id="equipment-4" class="custom-checkbox" />
               <label for="equipment-4">Игровой-комплекс</label>
             </div>
             <div class="rooms-form__row">
-              <input type="checkbox" name="equipment-5" id="equipment-5" />
+              <input type="checkbox" name="equipment-5" id="equipment-5" class="custom-checkbox" />
               <label for="equipment-5">Домик</label>
             </div>
           </div>
@@ -92,8 +105,8 @@
           <input type="reset" value="Сбросить фильтр" class="rooms-form__reset rooms-form__btn" />
         </form>
       </div>
-      <div class="rooms-catalog__inner">
 
+      <div class="rooms-catalog__inner">
         <div class="rooms-catalog__item">
           <img src="img/catalog-item-1.jpg" alt="" class="rooms-catalog__item--img" />
           <div class="rooms-catalog__item--inner">
@@ -102,7 +115,13 @@
               Размеры (ШхГхВ)&nbsp;&mdash; 90&times;70&times;180&nbsp;см
             </div>
             <div class="rooms-catalog__item--content">Площадь - 0,63 м2</div>
-            <div class="rooms-catalog__item--content">Оснащение номера</div>
+            <div class="rooms-catalog__item--content">
+              Оснащение номера
+              <span class="equipment">
+                <img src="img/equipment/equipment-1.svg" alt="Пустой номер" class="equipment-icon">
+                <span class="equipment-text">Пустой номер</span>
+              </span>
+            </div>
             <div class="rooms-catalog__item--content">
               Цена за сутки:
               <span class="rooms-catalog__item--price">100&#8381;</span>
@@ -119,7 +138,17 @@
               Размеры (ШхГхВ)&nbsp;&mdash; 90&times;100&times;180&nbsp;см
             </div>
             <div class="rooms-catalog__item--content">Площадь - 0,90 м2</div>
-            <div class="rooms-catalog__item--content">Оснащение номера</div>
+            <div class="rooms-catalog__item--content">
+              Оснащение номера
+              <span class="equipment">
+                <img src="img/equipment/equipment-2.svg" alt="Лежак" class="equipment-icon">
+                <span class="equipment-text">Лежак</span>
+              </span>
+              <span class="equipment">
+                <img src="img/equipment/equipment-3.svg" alt="Когтеточка" class="equipment-icon">
+                <span class="equipment-text">Когтеточка</span>
+              </span>
+            </div>
             <div class="rooms-catalog__item--content">
               Цена за сутки:
               <span class="rooms-catalog__item--price">200&#8381;</span>
@@ -136,7 +165,21 @@
               Размеры (ШхГхВ)&nbsp;&mdash; 100&times;125&times;180&nbsp;см
             </div>
             <div class="rooms-catalog__item--content">Площадь - 1,13 м2</div>
-            <div class="rooms-catalog__item--content">Оснащение номера</div>
+            <div class="rooms-catalog__item--content">
+              Оснащение номера
+              <span class="equipment">
+                <img src="img/equipment/equipment-2.svg" alt="Лежак" class="equipment-icon">
+                <span class="equipment-text">Лежак</span>
+              </span>
+              <span class="equipment">
+                <img src="img/equipment/equipment-3.svg" alt="Когтеточка" class="equipment-icon">
+                <span class="equipment-text">Когтеточка</span>
+              </span>
+              <span class="equipment">
+                <img src="img/equipment/equipment-4.svg" alt="Игровая комната" class="equipment-icon">
+                <span class="equipment-text">Игровая комната</span>
+              </span>
+            </div>
             <div class="rooms-catalog__item--content">
               Цена за сутки:
               <span class="rooms-catalog__item--price">250&#8381;</span>
@@ -153,7 +196,21 @@
               Размеры (ШхГхВ)&nbsp;&mdash; 125&times;125&times;180&nbsp;см
             </div>
             <div class="rooms-catalog__item--content">Площадь - 1,56 м2</div>
-            <div class="rooms-catalog__item--content">Оснащение номера</div>
+            <div class="rooms-catalog__item--content">
+              Оснащение номера
+              <span class="equipment">
+                <img src="img/equipment/equipment-2.svg" alt="Лежак" class="equipment-icon">
+                <span class="equipment-text">Лежак</span>
+              </span>
+              <span class="equipment">
+                <img src="img/equipment/equipment-3.svg" alt="Когтеточка" class="equipment-icon">
+                <span class="equipment-text">Когтеточка</span>
+              </span>
+              <span class="equipment">
+                <img src="img/equipment/equipment-4.svg" alt="Игровая комната" class="equipment-icon">
+                <span class="equipment-text">Игровая комната</span>
+              </span>
+            </div>
             <div class="rooms-catalog__item--content">
               Цена за сутки:
               <span class="rooms-catalog__item--price">350&#8381;</span>
@@ -170,7 +227,25 @@
               Размеры (ШхГхВ)&nbsp;&mdash; 160&times;160&times;180&nbsp;см
             </div>
             <div class="rooms-catalog__item--content">Площадь - 2,56 м2</div>
-            <div class="rooms-catalog__item--content">Оснащение номера</div>
+            <div class="rooms-catalog__item--content">
+              Оснащение номера
+              <span class="equipment">
+                <img src="img/equipment/equipment-2.svg" alt="Лежак" class="equipment-icon">
+                <span class="equipment-text">Лежак</span>
+              </span>
+              <span class="equipment">
+                <img src="img/equipment/equipment-3.svg" alt="Когтеточка" class="equipment-icon">
+                <span class="equipment-text">Когтеточка</span>
+              </span>
+              <span class="equipment">
+                <img src="img/equipment/equipment-4.svg" alt="Игровая комната" class="equipment-icon">
+                <span class="equipment-text">Игровая комната</span>
+              </span>
+              <span class="equipment">
+                <img src="img/equipment/equipment-5.svg" alt="Домик" class="equipment-icon">
+                <span class="equipment-text">Домик</span>
+              </span>
+            </div>
             <div class="rooms-catalog__item--content">
               Цена за сутки:
               <span class="rooms-catalog__item--price">500&#8381;</span>
@@ -187,7 +262,25 @@
               Размеры (ШхГхВ)&nbsp;&mdash; 180&times;160&times;180&nbsp;см
             </div>
             <div class="rooms-catalog__item--content">Площадь - 2,88 м2</div>
-            <div class="rooms-catalog__item--content">Оснащение номера</div>
+            <div class="rooms-catalog__item--content">
+              Оснащение номера
+              <span class="equipment">
+                <img src="img/equipment/equipment-2.svg" alt="Лежак" class="equipment-icon">
+                <span class="equipment-text">Лежак</span>
+              </span>
+              <span class="equipment">
+                <img src="img/equipment/equipment-3.svg" alt="Когтеточка" class="equipment-icon">
+                <span class="equipment-text">Когтеточка</span>
+              </span>
+              <span class="equipment">
+                <img src="img/equipment/equipment-4.svg" alt="Игровая комната" class="equipment-icon">
+                <span class="equipment-text">Игровая комната</span>
+              </span>
+              <span class="equipment">
+                <img src="img/equipment/equipment-5.svg" alt="Домик" class="equipment-icon">
+                <span class="equipment-text">Домик</span>
+              </span>
+            </div>
             <div class="rooms-catalog__item--content">
               Цена за сутки:
               <span class="rooms-catalog__item--price">600&#8381;</span>
