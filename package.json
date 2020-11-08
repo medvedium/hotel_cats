@@ -1,7 +1,7 @@
 {
   "name": "template",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://medvedium.github.io/hotel_cats/",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -32,8 +32,16 @@
     "gulp-webpcss": "^1.1.1"
   },
   "dependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.13",
     "save-dev": "0.0.1-security",
     "stylelint": "^13.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medvedium/hotel_cats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/medvedium/hotel_cats/issues"
+  },
+  "homepage": "https://github.com/medvedium/hotel_cats#readme"
 }
