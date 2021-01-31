@@ -2,68 +2,11 @@
 <html lang="ru">
 
 <head>
-  @@include('_head.html')
+  @@include('_head')
 </head>
 
 <body>
-  <header class="header">
-    <div class="container header__container">
-      <a href="index.html" class="header__link">
-        <img src="img/logo.svg" alt="Логотип" class="header__logo" />
-      </a>
-      <div class="header__burger">
-        <span></span>
-      </div>
-      <nav class="header__nav">
-        <ul class="header__nav--list">
-          <li class="header__nav--item">
-            <a href="#features" class="header__nav--link">Почему мы?</a>
-          </li>
-          <li class="header__nav--item">
-            <a href="#rooms" class="header__nav--link">Номера</a>
-          </li>
-          <li class="header__nav--item">
-            <a href="#reviews" class="header__nav--link">Отзывы</a>
-          </li>
-          <li class="header__nav--item">
-            <a href="#contacts" class="header__nav--link">Как нас найти</a>
-          </li>
-        </ul>
-      </nav>
-      <nav class="header__nav--mobile">
-        <ul class="header__nav--list">
-          <li class="header__nav--item">
-            <a href="#features" class="header__nav--link-mobile"> Почему мы? </a>
-          </li>
-          <li class="header__nav--item">
-            <a href="#rooms" class="header__nav--link-mobile">Номера</a>
-          </li>
-          <li class="header__nav--item">
-            <a href="#reviews" class="header__nav--link-mobile">Отзывы</a>
-          </li>
-          <li class="header__nav--item">
-            <a href="#contacts" class="header__nav--link-mobile"> Как нас найти </a>
-          </li>
-          <li>
-            <a href="tel:78003335599" class="header__nav--phone"></a>
-            8 (800) 333-55-99
-            </a>
-          </li>
-          <li class="header__nav--social">
-            <a href="#" class="contacts__social--link">
-              <img src="img/facebook.svg" alt="" />
-            </a>
-            <a href="#" class="contacts__social--link">
-              <img src="img/instagram.svg" alt="" />
-            </a>
-            <a href="#" class="contacts__social--link">
-              <img src="img/vk.svg" alt="" />
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  @@include('_header')
 
   <section class="hero">
     <div class="hero__city">Санкт-Петербург</div>
@@ -227,7 +170,8 @@
     </div>
   </section>
 
-  @@include('_contacts.html') @@include('_footer.html')
+  @@include('_contacts')
+  @@include('_footer')
 
   <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
   <script src="js/script.min.js"></script>
