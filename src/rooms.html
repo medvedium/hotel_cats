@@ -2,23 +2,38 @@
 <html lang="ru">
 
 <head>
-  @@include('_head')
+  @@include('_head.html')
 </head>
 
 <body>
-  @@include('_header')
+  @@include('_header.html')
   <section class="rooms-catalog">
     <div class="rooms-catalog__header">
       <h2 class="rooms-catalog__title">Наши номера</h2>
       <div class="rooms-catalog__buttons">
         <button class="rooms-catalog__button rooms-catalog__button--filter">
           <img src="img/filter.svg" alt="">Фильтры</button>
-        <select name="sort" id="sort" class="rooms-catalog__button rooms-catalog__button--sort">
+
+        <div class="sort">
+          <div class="sort__header">
+            <span class="sort__current">&#8593;&nbsp;По площади</span>
+            <img src="img/sort-dropdown.svg" alt="" class="sort__icon">
+          </div>
+
+          <div class="sort__body">
+            <div class="sort__item">&#8593;&nbsp;По площади</div>
+            <div class="sort__item">&#8595;&nbsp;По площади</div>
+            <div class="sort__item">&#8593;&nbsp;По цене</div>
+            <div class="sort__item">&#8595;&nbsp;По цене</div>
+          </div>
+        </div>
+
+        <!-- <select name="sort" id="sort" class="rooms-catalog__button rooms-catalog__button--sort">
           <option value="squareUp">&#8593;&nbsp;По площади</option>
           <option value="squareDown">&#8595;&nbsp;По площади</option>
           <option value="priceUp">&#8593;&nbsp;По цене</option>
           <option value="priceDown">&#8595;&nbsp;По цене</option>
-        </select>
+        </select> -->
       </div>
     </div>
     <div class="rooms-catalog__wrap">
