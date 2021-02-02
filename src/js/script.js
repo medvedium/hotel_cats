@@ -49,39 +49,28 @@ $(document).ready(function () {
     $('body').toggleClass('lock');
   });
 
-  // Плавная прокрутка к пункту меню
+  const mobileMenu = document.querySelector('.header__nav--mobile'),
+    mobileLink = mobileMenu.querySelectorAll('.header__nav--link-mobile'),
+    header = document.querySelector('.header'),
+    burger = document.querySelector('.header__burger'),
+    body = document.querySelector('body');
 
-  $('.header__nav--link, .footer__nav--link, .header__nav--link-mobile').click(
-    function () {
-      let linkID = $(this).attr('href');
-      if ($('.header__burger').hasClass('active')) {
-        // Прокрутка из мобильного меню
+  mobileLink.forEach(item => {
+    item.addEventListener('click', () => {
+      burger.classList.toggle('active');
+      body.classList.toggle('lock');
+      mobileMenu.classList.toggle('active')
+    });
+  });
 
-        $('html, body').animate(
-          {
-            scrollTop: $(linkID).offset().top - 62,
-          },
-          'slow',
-        );
-      } else {
-        // Прокрутка из полноценного меню
-
-        $('html, body').animate(
-          {
-            scrollTop: $(linkID).offset().top,
-          },
-          'slow',
-        );
-      }
-
-      //Скрытие мобильного меню при нажатии ссылки
-
-      if ($(this).hasClass('header__nav--link-mobile')) {
-        $('.header__burger, .header__nav--mobile').toggleClass('active');
-        $('body').toggleClass('lock');
-      }
-    },
-  );
+  window.onscroll = function (e) {
+    if (this.oldScroll > this.scrollY) {
+      header.classList.remove("is_hide");
+    } else {
+      header.classList.add("is_hide");
+    }
+    this.oldScroll = this.scrollY;
+  };
 
   // Слайдер раздела "Номера"
 

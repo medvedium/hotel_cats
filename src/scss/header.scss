@@ -5,6 +5,7 @@
   left: 0;
   z-index: 50;
   background-color: transparent;
+  transition: all .1s linear;
   &:before {
     content: '';
     position: absolute;
@@ -163,5 +164,10 @@
         margin: 0 0 20px 0;
       }
     }
+    &.is_hide {
+      transform: translateY(-100%);
+      
+    }
   }
+
 }
