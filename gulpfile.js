@@ -39,9 +39,6 @@ let { src, dest } = require("gulp"),
   rename = require("gulp-rename"),
   uglify = require("gulp-uglify-es").default,
   imagemin = require("gulp-imagemin"),
-  webp = require("gulp-webp"),
-  webphtml = require("gulp-webp-html"),
-  webpcss = require("gulp-webpcss"),
   svgSprite = require("gulp-svg-sprite"),
   ttf2woff = require("gulp-ttf2woff"),
   ttf2woff2 = require("gulp-ttf2woff2"),
@@ -62,7 +59,6 @@ function browserSync(params) {
 function html() {
   return src(path.src.html)
     .pipe(fileinclude())
-    .pipe(webphtml())
     .pipe(dest(path.build.html))
     .pipe(browsersync.stream());
 }
@@ -81,7 +77,6 @@ function css() {
         cascade: true,
       })
     )
-    .pipe(webpcss())
     .pipe(dest(path.build.css))
     .pipe(clean_css())
     .pipe(
@@ -109,12 +104,6 @@ function js() {
 
 function images() {
   return src(path.src.img)
-    .pipe(
-      webp({
-        quality: 70,
-      })
-    )
-    .pipe(dest(path.build.img))
     .pipe(src(path.src.img))
     .pipe(
       imagemin({
@@ -129,9 +118,14 @@ function images() {
 }
 
 function fonts() {
-  src(path.src.fonts).pipe(ttf2woff()).pipe(dest(path.build.fonts));
-  return src(path.src.fonts).pipe(ttf2woff2()).pipe(dest(path.build.fonts));
+  src(path.src.fonts)
+    .pipe(ttf2woff())
+    .pipe(dest(path.build.fonts));
+  return src(path.src.fonts)
+    .pipe(ttf2woff2())
+    .pipe(dest(path.build.fonts));
 }
+
 gulp.task("otf2ttf", function () {
   return src([source_folder + "/fonts/*.otf"])
     .pipe(
@@ -172,10 +166,10 @@ function fontsStyle(params) {
             fs.appendFile(
               source_folder + "/scss/fonts.scss",
               '@include font("' +
-                fontname +
-                '", "' +
-                fontname +
-                '", "400", "normal");\r\n',
+              fontname +
+              '", "' +
+              fontname +
+              '", "400", "normal");\r\n',
               cb
             );
           }
@@ -185,7 +179,7 @@ function fontsStyle(params) {
     });
   }
 }
-function cb() {}
+function cb() { }
 
 function deploy(cb) {
   ghPages.publish(paths.join(process.cwd(), "./build"), cb);

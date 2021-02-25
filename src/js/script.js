@@ -1,25 +1,6 @@
 @@include('jquery.min.js');
 @@include('slick.min.js');
 
-// Gulp-webP плагин
-
-function testWebP(callback) {
-  var webP = new Image();
-  webP.onload = webP.onerror = function () {
-    callback(webP.height == 2);
-  };
-  webP.src =
-    'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
-}
-
-testWebP(function (support) {
-  if (support == true) {
-    document.querySelector('body').classList.add('webp');
-  } else {
-    document.querySelector('body').classList.add('no-webp');
-  }
-});
-
 // Подключение карт 2Gis
 
 let map;
@@ -42,6 +23,7 @@ DG.then(function () {
 });
 
 $(document).ready(function () {
+
   // Burger-menu
 
   $('.header__burger').click(function (event) {
