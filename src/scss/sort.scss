@@ -1,21 +1,54 @@
 .sort {
-  width: 174px;
-  box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
-  border-radius: 25px;
-  padding: 12px 20px;
+  position: relative;
+  display: inline-block;
   &__header {
     display: flex;
+    opacity: 1;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+
+    width: 174px;
+    box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
+    border-radius: 25px;
+    padding: 12px 20px;
+
+    transition: all 0.2s linear;
+    &--active {
+      opacity: 0;
+    }
   }
   &__icon {
     cursor-event: none;
     fill: #000;;
   }
   &__body {
-
+    width: 174px;
+    box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 12px 20px;
     display: none;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    transition: all 0.3s linear;
+
+    &--active {
+      display: block;
+      opacity: 1;
+    }
+  }
+  &__item {
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+    &:hover {
+      color: $main;
+    }
   }
   &:hover .sort__icon {
     fill: $main;

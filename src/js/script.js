@@ -1,29 +1,8 @@
 @@include('jquery.min.js');
 @@include('slick.min.js');
 
-// Подключение карт 2Gis
-
-let map;
-let myIcon;
-
-DG.then(function () {
-  map = DG.map('map', {
-    center: [59.93864, 30.323],
-    zoom: 16,
-  });
-  myIcon = DG.icon({
-    iconUrl: 'img/map-marker.svg',
-    iconSize: [52, 68],
-  });
-  DG.marker([59.93864, 30.323], {
-    icon: myIcon,
-  })
-    .addTo(map)
-    .bindPopup('Санкт-Петербург, ул Большая Конюшенная, д 19');
-});
 
 $(document).ready(function () {
-
   // Burger-menu
 
   $('.header__burger').click(function (event) {
@@ -93,4 +72,48 @@ $(document).ready(function () {
       },
     ],
   });
+
+  // Меню сортировки
+
+  let sortHeader = document.querySelector('.sort__header'),
+    sortBody = document.querySelector('.sort__body'),
+    sortItem = document.querySelectorAll('.sort__item'),
+    sortCurrent = document.querySelector('.sort__current');
+
+  sortHeader.addEventListener('click', (item) => {
+    sortHeader.classList.add('sort__header--active');
+    sortBody.classList.add('sort__body--active');
+  });
+
+  sortItem.forEach(item => {
+    item.addEventListener('click', function () {
+      sortHeader.classList.remove('sort__header--active');
+      sortBody.classList.remove('sort__body--active');
+      let text = this.innerText;
+      sortCurrent.innerText = text;
+    });
+  });
 });
+
+
+// Подключение карт 2Gis
+
+let map;
+let myIcon;
+
+DG.then(function () {
+  map = DG.map('map', {
+    center: [59.93864, 30.323],
+    zoom: 16,
+  });
+  myIcon = DG.icon({
+    iconUrl: 'img/map-marker.svg',
+    iconSize: [52, 68],
+  });
+  DG.marker([59.93864, 30.323], {
+    icon: myIcon,
+  })
+    .addTo(map)
+    .bindPopup('Санкт-Петербург, ул Большая Конюшенная, д 19');
+});
+

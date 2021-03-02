@@ -104,7 +104,19 @@ h6 {
     color: $main;
     border: 1px solid $main;
   }
+  &__light {
+    background-color: $white;
+    color: $text;
+    &:after {
+      background: url("../img/paw-hero.svg");
+    }
+    &:hover {
+      background-color: $main;
+      color: $white;
+    }
+  }
 }
+
 @media (max-width: 991px) {
   .btn {
     font-size: 16px;

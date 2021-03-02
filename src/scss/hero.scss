@@ -24,17 +24,7 @@
     margin-top: 10px;
     margin-bottom: 50px;
   }
-  &__btn {
-    background-color: $white;
-    color: $text;
-    &:after {
-      background: url("../img/paw-hero.svg");
-    }
-    &:hover {
-      background-color: $main;
-      color: $white;
-    }
-  }
+  
 }
 @media (max-width: 991px) {
   .hero {
