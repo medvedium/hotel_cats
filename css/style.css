@@ -88,6 +88,7 @@ body {
   -webkit-text-size-adjust: 100%;
   font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #1a212f;
+  scroll-behavior: smooth;
 }
 
 input,
@@ -170,6 +171,32 @@ h6 {
   border: 1px solid #ff7236;
 }
 
+.btn__light {
+  background-color: #ffffff;
+  color: #1a212f;
+}
+
+.btn__light:after {
+  background: url("../img/paw-hero.svg");
+}
+
+.btn__light:hover {
+  background-color: #ff7236;
+  color: #ffffff;
+}
+
+.modal__close {
+  fill: #ff7236;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
 .section__title {
   font-family: Rubik, sans-serif;
   font-weight: 700;
@@ -193,6 +220,9 @@ h6 {
   left: 0;
   z-index: 50;
   background-color: transparent;
+  -webkit-transition: all .1s linear;
+  -o-transition: all .1s linear;
+  transition: all .1s linear;
 }
 
 .header:before {
@@ -322,20 +352,6 @@ h6 {
   font-size: 20px;
   margin-top: 10px;
   margin-bottom: 50px;
-}
-
-.hero__btn {
-  background-color: #ffffff;
-  color: #1a212f;
-}
-
-.hero__btn:after {
-  background: url("../img/paw-hero.svg");
-}
-
-.hero__btn:hover {
-  background-color: #ff7236;
-  color: #ffffff;
 }
 
 .features {
@@ -1157,6 +1173,112 @@ h6 {
   background-color: #848484;
 }
 
+.sort {
+  position: relative;
+  display: inline-block;
+}
+
+.sort__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  width: 174px;
+  -webkit-box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
+          box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
+  border-radius: 25px;
+  padding: 12px 20px;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.sort__header--active {
+  opacity: 0;
+}
+
+.sort__icon {
+  cursor-event: none;
+  fill: #000;
+}
+
+.sort__body {
+  width: 174px;
+  -webkit-box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
+          box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 12px 20px;
+  display: none;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.sort__body--active {
+  display: block;
+  opacity: 1;
+}
+
+.sort__item {
+  cursor: pointer;
+}
+
+.sort__item:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.sort__item:hover {
+  color: #ff7236;
+}
+
+.sort:hover .sort__icon {
+  fill: #ff7236;
+}
+
+.banner {
+  border-radius: 10px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 270px;
+  background-image: url("../img/banner-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner__title {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 43px;
+  margin-bottom: 25px;
+}
+
+.banner__title-big {
+  font-size: 56px;
+}
+
+.banner__text {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 35px;
+}
+
 @media (max-width: 1265px) {
   .contacts__text {
     padding-left: 45px;
@@ -1250,27 +1372,38 @@ h6 {
 }
 
 @media (max-width: 914px) {
-  .rooms-catalog__filter {
-    position: absolute;
-    top: 80px;
-    right: 80px;
-    left: 80px;
-    padding: 30px;
-    z-index: 3;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.65);
-            box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.65);
-  }
-
-  .rooms-catalog__filter:before {
+  .rooms-catalog__wrap--active:before {
     content: '';
     display: block;
-    background-color: #rgba 255, 255, 255, 0.6;
+    background-color: #rgba #ffffff, 0.5;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 51;
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    overflow: scroll;
+  }
+
+  .rooms-catalog__filter {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    left: 0;
+    padding: 30px;
+    width: 332px;
+    margin: 0 auto;
+    z-index: 52;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.65);
+            box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.65);
+  }
+
+  .rooms-catalog__filter--active {
+    display: block;
   }
 
   .rooms-catalog__inner {
@@ -1280,6 +1413,28 @@ h6 {
 
   .rooms-catalog__button--filter {
     display: inline-block;
+    margin-right: 30px;
+  }
+
+  __buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: stretch;
+        align-self: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-top: 30px;
+  }
+
+  .banner {
+    max-width: 678px;
+    margin: 0 auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 50px;
+    background-image: url("../img/banner-tablet.jpg");
   }
 }
 
@@ -1378,22 +1533,6 @@ h6 {
     margin-left: 0;
   }
 
-  .contacts {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .contacts__map {
-    width: 100vw;
-    height: 100vw;
-  }
-
-  .contacts__text {
-    padding: 40px 15px;
-  }
-
   .footer__logo {
     width: 46px;
   }
@@ -1441,6 +1580,24 @@ h6 {
   }
 }
 
+@media (max-width: 767px) {
+  .contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .contacts__map {
+    width: 100vw;
+    height: 100vw;
+  }
+
+  .contacts__text {
+    padding: 40px 15px;
+  }
+}
+
 @media (max-width: 605px) {
   .rooms-catalog__header {
     -webkit-box-orient: vertical;
@@ -1452,20 +1609,45 @@ h6 {
             align-items: flex-start;
   }
 
-  .rooms-catalog__buttons {
+  .rooms-catalog__item {
+    width: 100%;
+  }
+
+  .banner {
+    background-image: url("../img/banner-mobile.jpg");
+    max-width: 290px;
+    padding-left: 0;
+    padding-top: 50px;
+    padding-bottom: 250px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-item-align: stretch;
-        align-self: stretch;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    padding-top: 30px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
-  .rooms-catalog__item {
-    width: 100%;
+  .banner__title {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 20px;
+  }
+
+  .banner__title-big {
+    font-size: 37px;
+  }
+
+  .banner__text {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  .btn {
+    margin-top: 30px;
   }
 }
 
@@ -1576,6 +1758,12 @@ h6 {
     margin: 0 0 20px 0;
   }
 
+  .header.is_hide {
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+
   .hero {
     padding-top: 115px;
     padding-bottom: 200px;
@@ -1595,17 +1783,35 @@ h6 {
 
   .rooms-catalog__header {
     padding-top: 80px;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 
   .rooms-catalog__title {
     font-size: 28px;
     line-height: 33px;
   }
-}
 
-.webp .hero { background-image: url(../img/hero-bg.webp); }
+  .rooms-catalog__buttons {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 
-@media (max-width: 991px) {
+  .rooms-catalog__button {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
 
-  .webp .hero { background-image: url(../img/hero-bg-tablet.webp); }
+  .rooms-catalog__button--filter {
+    margin-right: 0;
+  }
+
+  .sort__header {
+    width: 150px;
+  }
 }
