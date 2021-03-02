@@ -117,6 +117,15 @@ h6 {
   }
 }
 
+.modal__close {
+  fill: $main;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+
+
 @media (max-width: 991px) {
   .btn {
     font-size: 16px;

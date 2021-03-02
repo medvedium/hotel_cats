@@ -93,6 +93,18 @@ $(document).ready(function () {
       sortCurrent.innerText = text;
     });
   });
+
+  // Кнопка фильтра
+
+  let filterWindow = document.querySelector('.rooms-catalog__filter'),
+    filterButton = document.querySelector('.rooms-catalog__button--filter'),
+    filterWrap = document.querySelector('.rooms-catalog__wrap');
+
+  filterButton.addEventListener('click', () => {
+    filterWindow.classList.add('rooms-catalog__filter--active');
+    filterWrap.classList.add('rooms-catalog__wrap--active');
+  });
+
 });
 
 

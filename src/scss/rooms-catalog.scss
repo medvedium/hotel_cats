@@ -276,6 +276,20 @@
 
 @media (max-width: 914px) {
   .rooms-catalog {
+    &__wrap--active {
+      &:before {
+        content: '';
+        display: block;
+        background-color: #rgba($white, 0.5);
+        position: absolute;
+        top: 0;
+        right: 0; 
+        bottom: 0;
+        left: 0;
+        z-index: 51;
+        backdrop-filter: blur(5px);
+      }
+    }
     &__filter {
       display: none;
       position: absolute;
@@ -283,20 +297,16 @@
       right: 80px;
       left: 80px;
       padding: 30px;
-      // display: flex;
-      z-index: 3;
+      width: 332px;
+      margin: 0 auto;
+      z-index: 52;
       border-radius: 10px;
       box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.65);
-      &:before {
-        content: '';
-        display: block;
-        background-color: #rgba(255, 255, 255, .6);
-        position: absolute;
-        top: 0;
-        right: 0; 
-        bottom: 0;
-        left: 0;
-      }
+      
+      
+    }
+    &__filter--active {
+      display: block;
     }
     &__inner {
       flex-basis: 100%;
