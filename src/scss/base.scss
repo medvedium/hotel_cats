@@ -125,6 +125,10 @@ h6 {
   cursor: pointer;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 
 @media (max-width: 991px) {
   .btn {

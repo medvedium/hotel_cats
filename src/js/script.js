@@ -98,13 +98,31 @@ $(document).ready(function () {
 
   let filterWindow = document.querySelector('.rooms-catalog__filter'),
     filterButton = document.querySelector('.rooms-catalog__button--filter'),
-    filterWrap = document.querySelector('.rooms-catalog__wrap');
+    filterWrap = document.querySelector('.rooms-catalog__wrap'),
+    modalClose = document.querySelector('.modal__close');
 
   filterButton.addEventListener('click', () => {
     filterWindow.classList.add('rooms-catalog__filter--active');
     filterWrap.classList.add('rooms-catalog__wrap--active');
+    body.classList.add('no-scroll');
+
   });
 
+  modalClose.addEventListener('click', () => {
+    filterWindow.classList.remove('rooms-catalog__filter--active');
+    filterWrap.classList.remove('rooms-catalog__wrap--active');
+    body.classList.remove('no-scroll');
+  });
+
+  filterWrap.addEventListener('click', () => {
+    filterWindow.classList.remove('rooms-catalog__filter--active');
+    filterWrap.classList.remove('rooms-catalog__wrap--active');
+    body.classList.remove('no-scroll');
+  });
+
+  filterWindow.addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
 });
 
 
