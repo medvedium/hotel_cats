@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  @@include('_head.html')
+</head>
+
+<body>
+  @@include('_header.html')
+
+  <section class="rooms">
+    <div class="container rooms__container">
+      <h2 class="section__title rooms__title" id="rooms">Номера</h2>
+      <img src="img/fish.svg" alt="" class="rooms__pseudo" />
+      <div class="rooms__inner">
+        <div class="rooms__slide">
+          <img src="img/room-1.jpg" alt="" class="rooms__image" />
+          <div class="rooms__wrapper">
+            <div class="rooms__name">Эконом плюс</div>
+            <ul class="rooms__list">
+              <li class="rooms__list--item">Площадь - 0,90 м2</li>
+              <li class="rooms__list--item">
+                Размеры (ШхГхВ) — 90х100х180 см
+              </li>
+              <li class="rooms__list--item">Цена за сутки: 200₽</li>
+            </ul>
+            <a href="rooms.html" class="btn">Забронировать</a>
+          </div>
+        </div>
+
+        <div class="rooms__slide">
+          <img src="img/room-2.jpg" alt="" class="rooms__image" />
+          <div class="rooms__wrapper">
+            <div class="rooms__name">Комфорт</div>
+            <ul class="rooms__list">
+              <li class="rooms__list--item">Площадь - 1,13 м2</li>
+              <li class="rooms__list--item">
+                Размеры (ШхГхВ) - 100х125х180 см
+              </li>
+              <li class="rooms__list--item">Цена за сутки: 250₽</li>
+            </ul>
+            <a href="rooms.html" class="btn">Забронировать</a>
+          </div>
+        </div>
+
+        <div class="rooms__slide">
+          <img src="img/room-3.jpg" alt="" class="rooms__image" />
+          <div class="rooms__wrapper">
+            <div class="rooms__name">Сьют</div>
+            <ul class="rooms__list">
+              <li class="rooms__list--item">Площадь - 1,56 м2</li>
+              <li class="rooms__list--item">
+                Размеры (ШхГхВ) - 125х125х180 см
+              </li>
+              <li class="rooms__list--item">Цена за сутки: 350₽</li>
+            </ul>
+            <a href="rooms.html" class="btn">Забронировать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  @@include('_contacts.html')
+  @@include('_footer.html')
+
+  <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+  <script src="js/script.min.js"></script>
+</body>
+
+</html>

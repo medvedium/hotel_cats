@@ -104,20 +104,20 @@ $(document).ready(function () {
   filterButton.addEventListener('click', () => {
     filterWindow.classList.add('rooms-catalog__filter--active');
     filterWrap.classList.add('rooms-catalog__wrap--active');
-    body.classList.add('no-scroll');
+    body.classList.add('lock');
 
   });
 
   modalClose.addEventListener('click', () => {
     filterWindow.classList.remove('rooms-catalog__filter--active');
     filterWrap.classList.remove('rooms-catalog__wrap--active');
-    body.classList.remove('no-scroll');
+    body.classList.remove('lock');
   });
 
   filterWrap.addEventListener('click', () => {
     filterWindow.classList.remove('rooms-catalog__filter--active');
     filterWrap.classList.remove('rooms-catalog__wrap--active');
-    body.classList.remove('no-scroll');
+    body.classList.remove('lock');
   });
 
   filterWindow.addEventListener('click', (event) => {
