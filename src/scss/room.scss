@@ -1,0 +1,93 @@
+.room {
+  padding-top: 146px;
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+  }
+
+  &__slider {
+    display: flex;
+
+    &--column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &--item {
+      border-radius: 4px;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &--main {
+      padding-left: 30px;
+
+      & img {
+        border-radius: 8px;
+        height: 100%;
+      }
+    }
+  }
+
+  &__paw {
+    position: absolute;
+    right: calc(50% - 800px);
+    transform: rotate(-135deg);
+  }
+
+  &__description {
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
+
+  &__title {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    color: #1A212F;
+
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    &--item {
+      font-family: Lato;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 19px;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &__equipment {
+    padding-top: 20px; 
+    
+    &--item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    &--icon {
+      margin-right: 8px;
+    }
+  }
+
+  &__btn {
+    margin-top: 5px;
+  }
+}

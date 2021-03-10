@@ -8,9 +8,50 @@
 <body>
   @@include('_header.html')
 
+  <section class="room">
+    <img src="img/paw-big.svg" alt="" class="room__paw">
+    <div class="container room__container">
+      <div class="room__slider">
+        <div class="room__slider--column">
+          <img src="img/super-lux/1.jpg" alt="" class="room__slider--item">
+          <img src="img/super-lux/2.jpg" alt="" class="room__slider--item">
+          <img src="img/super-lux/3.jpg" alt="" class="room__slider--item">
+        </div>
+        <div class="room__slider--main">
+          <img src="img/super-lux/4.jpg" alt="">
+        </div>
+      </div>
+      <div class="room__description">
+        <h2 class="room__title">Супер-Люкс</h2>
+        <ul class="room__list">
+          <li class="room__list--item">Размеры (ШхГхВ) - 180х160х180 см</li>
+          <li class="room__list--item">Площадь - 2,88 м2</li>
+          <li class="room__list--item">Оснащение номера
+            <ul class="room__equipment">
+              <li class="room__equipment--item">
+                <img src="img/equipment/equipment-2.svg" alt="" class="room__equipment--icon">Лежак
+              </li>
+              <li class="room__equipment--item">
+                <img src="img/equipment/equipment-5.svg" alt="" class="room__equipment--icon">Домик
+              </li>
+              <li class="room__equipment--item">
+                <img src="img/equipment/equipment-4.svg" alt="" class="room__equipment--icon">Игровой комплекс - 3 яруса
+              </li>
+              <li class="room__equipment--item">
+                <img src="img/equipment/equipment-3.svg" alt="" class="room__equipment--icon">Когтеточка
+              </li>
+            </ul>
+          </li>
+          <li class="room__list--item">Цена за сутки: <span class="room__price">600₽</span></li>
+        </ul>
+        <a href="rooms.html" class="btn room__btn">Забронировать</a>
+      </div>
+    </div>
+  </section>
+
   <section class="rooms">
     <div class="container rooms__container">
-      <h2 class="section__title rooms__title" id="rooms">Номера</h2>
+      <h2 class="section__title rooms__title" id="rooms">Другие номера</h2>
       <img src="img/fish.svg" alt="" class="rooms__pseudo" />
       <div class="rooms__inner">
         <div class="rooms__slide">
@@ -63,6 +104,20 @@
 
   @@include('_contacts.html')
   @@include('_footer.html')
+
+  <div class="modal">
+    <div class="modal__dialog">
+      <h2 class="modal__title">Забронировать номер</h2>
+      <form action="get" class="modal__form">
+        <input type="text" class="modal__input">
+        <input type="text" class="modal__input">
+        <input type="tel" class="modal__input">
+        <input type="email" class="modal__input">
+        <input type="date" class="modal__input">
+        <input type="date" class="modal__input">
+      </form>
+    </div>
+  </div>
 
   <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
   <script src="js/script.min.js"></script>
