@@ -104,73 +104,50 @@
   </div>
 </header>
 
-  <section class="hero">
-    <div class="hero__city">Санкт-Петербург</div>
-    <h1 class="hero__title">Котейка</h1>
-    <div class="hero__description">Уютная гостиница для котов и кошек</div>
-    <a href="rooms.html" class="btn btn__light">Забронировать </a>
-  </section>
-
-  <section class="features">
-    <div class="container features__container">
-      <img src="img/paw-big.svg" alt="" class="features__pseudo" />
-      <h2 class="section__title" id="features">Почему мы?</h2>
-      <div class="features__inner">
-        <div class="features__item">
-          <img src="img/features-icon-1.svg" alt="Комфортная температура" class="features__icon" />
-          <div class="features__name">Комфортная температура</div>
-          <div class="features__description">
-            Во всех номерах поддерживается комфортная температура в пределах
-            23 - 25 градусов. В каждом номере можно дополнительно
-            отрегулировать температуру.
-          </div>
+  <section class="room">
+    <img src="img/paw-big.svg" alt="" class="room__paw">
+    <div class="container room__container">
+      <div class="room__slider">
+        <div class="room__slider--column">
+          <img src="img/super-lux/1.jpg" alt="" class="room__slider--item">
+          <img src="img/super-lux/2.jpg" alt="" class="room__slider--item">
+          <img src="img/super-lux/3.jpg" alt="" class="room__slider--item">
         </div>
-        <div class="features__item">
-          <img src="img/features-icon-2.svg" alt="Видеонаблюдение" class="features__icon" />
-          <div class="features__name">Видеонаблюдение</div>
-          <div class="features__description">
-            Мы предоставляем доступ в нашу систему. Вы сможете следитьза своим
-            питомцем со своего смартфона или компьютера.
-          </div>
+        <div class="room__slider--main">
+          <img src="img/super-lux/4.jpg" alt="">
         </div>
-        <div class="features__item">
-          <img src="img/features-icon-3.svg" alt="Услуги Зоотакси" class="features__icon" />
-          <div class="features__name">Услуги Зоотакси</div>
-          <div class="features__description">
-            Мы приедем за вашим питомцем в любой район Санкт-Петербурга.
-          </div>
-        </div>
-        <div class="features__item">
-          <img src="img/features-icon-4.svg" alt="Сбалансированное питание" class="features__icon" />
-          <div class="features__name">Сбалансированное питание</div>
-          <div class="features__description">
-            Вы можете привезти свой корм или доверить рацион своего питомца
-            нашим профессионалам.
-          </div>
-        </div>
-        <div class="features__item">
-          <img src="img/features-icon-5.svg" alt="Ежедневные прогулки" class="features__icon" />
-          <div class="features__name">Ежедневные прогулки</div>
-          <div class="features__description">
-            По вашему желанию мы выгуливаем вашего питомца два раза в день на
-            специализированной закрытой территории.
-          </div>
-        </div>
-        <div class="features__item">
-          <img src="img/features-icon-6.svg" alt="Лучшие ветеринары" class="features__icon" />
-          <div class="features__name">Лучшие ветеринары</div>
-          <div class="features__description">
-            В гостинице 24 часа дежурит ветеринарный врач, который окажет
-            любую помощь в случае необходимости.
-          </div>
-        </div>
+      </div>
+      <div class="room__description">
+        <h2 class="room__title">Супер-Люкс</h2>
+        <ul class="room__list">
+          <li class="room__list--item">Размеры (ШхГхВ) - 180х160х180 см</li>
+          <li class="room__list--item">Площадь - 2,88 м2</li>
+          <li class="room__list--item">Оснащение номера
+            <ul class="room__equipment">
+              <li class="room__equipment--item">
+                <img src="img/equipment/equipment-2.svg" alt="" class="room__equipment--icon">Лежак
+              </li>
+              <li class="room__equipment--item">
+                <img src="img/equipment/equipment-5.svg" alt="" class="room__equipment--icon">Домик
+              </li>
+              <li class="room__equipment--item">
+                <img src="img/equipment/equipment-4.svg" alt="" class="room__equipment--icon">Игровой комплекс - 3 яруса
+              </li>
+              <li class="room__equipment--item">
+                <img src="img/equipment/equipment-3.svg" alt="" class="room__equipment--icon">Когтеточка
+              </li>
+            </ul>
+          </li>
+          <li class="room__list--item">Цена за сутки: <span class="room__price">600₽</span></li>
+        </ul>
+        <div class="btn room__btn">Забронировать</div>
       </div>
     </div>
   </section>
 
   <section class="rooms">
     <div class="container rooms__container">
-      <h2 class="section__title rooms__title" id="rooms">Номера</h2>
+      <h2 class="section__title rooms__title" id="rooms">Другие номера</h2>
       <img src="img/fish.svg" alt="" class="rooms__pseudo" />
       <div class="rooms__inner">
         <div class="rooms__slide">
@@ -215,51 +192,6 @@
               <li class="rooms__list--item">Цена за сутки: 350₽</li>
             </ul>
             <a href="rooms.html" class="btn">Забронировать</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="reviews">
-    <div class="container reviews__container">
-      <h2 class="reviews__title section__title" id="reviews">Отзывы</h2>
-      <img src="img/paw-big.svg" alt="" class="reviews__pseudo" />
-      <div class="reviews__inner">
-        <div class="reviews__item">
-          <div class="reviews__text">
-            Первый раз пришлось оставить нашего котика в гостинице, очень
-            переживали. Администратор Мария каждый день высылала нам фото
-            нашего питомца, рассказывала, как он себя чувствует. И мы и котик
-            остались очень довольны!
-          </div>
-          <div class="reviews__author">
-            <div class="reviews__name">Валерия Гришаева</div>
-            <div class="reviews__date">15 ноября, 2019</div>
-          </div>
-        </div>
-        <div class="reviews__item">
-          <div class="reviews__text">
-            Гостиницу для питомцев нам посоветовали друзья. Они всегда
-            оставляют здесь своего кота, когда уезжают. В “Котейке” очень
-            хорошо заботятся о питомцах, в гостинице очень чисто. Всем
-            рекомендую! Будем обращаться еще.
-          </div>
-          <div class="reviews__author">
-            <div class="reviews__name">Екатерина Минаева</div>
-            <div class="reviews__date">10 октября, 2019</div>
-          </div>
-        </div>
-        <div class="reviews__item">
-          <div class="reviews__text">
-            Мой кот — настоящая привереда, угодить ему сложно. У меня были
-            особые требования к уходу за ним, и “Котейка” отлично справились.
-            Я часто наблюдал по видео за питомцем со своего телефона, это
-            очень удобно.
-          </div>
-          <div class="reviews__author">
-            <div class="reviews__name">Павел Нечаев</div>
-            <div class="reviews__date">2 августа, 2019</div>
           </div>
         </div>
       </div>
@@ -331,7 +263,47 @@
 <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
 <script src="js/script.min.js"></script>
 
+  <div class="modal">
+    <div class="modal__dialog">
+      <svg width="16" height="16" viewBox="0 0 16 16" class="modal__close" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L15 15M15 1L1 15" stroke="#1A212F" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      <img src="img/paw-big.svg" alt="" class="modal__dialog--paw">
+      <h2 class="modal__title">Забронировать номер</h2>
+      <form action="get" class="modal__form">
+        <input type="text" class="modal__input" placeholder="Ваше имя">
+        <input type="text" class="modal__input" placeholder="Имя Питомца">
+        <input type="tel" class="modal__input" placeholder="Телефон">
+        <input type="email" class="modal__input" placeholder="E-mail">
+        <div class="modal__row">
+          <span>Дата заезда</span>
+          <span>с</span>
+          <input type="date" class="modal__input">
+          <span>по</span>
+          <input type="date" class="modal__input">
+        </div>
+        <div class="modal__row--btn">
+          <button class="btn modal__submit">Отправить заявку</button>
+        </div>
+      </form>
 
+    </div>
+
+    <div class="modal__thanks">
+      <img src="img/paw-big.svg" alt="" class="modal__thanks--paw">
+      <svg width="16" height="16" viewBox="0 0 16 16" class="modal__close" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L15 15M15 1L1 15" stroke="#1A212F" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      <h2 class="modal__title">Спасибо за заявку!</h2>
+      <p class="modal__description">Мы свяжемся с вами в ближайшее время</p>
+      <div class="btn modal__thanks--btn">OK</div>
+    </div>
+  </div>
+
+  <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+  <script src="js/script.min.js"></script>
 </body>
 
 </html>

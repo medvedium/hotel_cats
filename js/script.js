@@ -22,7 +22,7 @@ $(document).ready(function () {
     item.addEventListener('click', () => {
       burger.classList.toggle('active');
       body.classList.toggle('lock');
-      mobileMenu.classList.toggle('active')
+      mobileMenu.classList.toggle('active');
     });
   });
 
@@ -77,55 +77,134 @@ $(document).ready(function () {
 
   // Меню сортировки
 
-  let sortHeader = document.querySelector('.sort__header'),
-    sortBody = document.querySelector('.sort__body'),
-    sortItem = document.querySelectorAll('.sort__item'),
-    sortCurrent = document.querySelector('.sort__current');
+  let roomsCatalog = document.querySelector('.rooms-catalog');
 
-  sortHeader.addEventListener('click', (item) => {
-    sortHeader.classList.add('sort__header--active');
-    sortBody.classList.add('sort__body--active');
-  });
+  if (roomsCatalog) {
 
-  sortItem.forEach(item => {
-    item.addEventListener('click', function () {
-      sortHeader.classList.remove('sort__header--active');
-      sortBody.classList.remove('sort__body--active');
-      let text = this.innerText;
-      sortCurrent.innerText = text;
+    let sortHeader = document.querySelector('.sort__header'),
+      sortBody = document.querySelector('.sort__body'),
+      sortItem = document.querySelectorAll('.sort__item'),
+      sortCurrent = document.querySelector('.sort__current'),
+
+      filterWindow = document.querySelector('.rooms-catalog__filter'),
+      filterButton = document.querySelector('.rooms-catalog__button--filter'),
+      filterWrap = document.querySelector('.rooms-catalog__wrap'),
+      fillterClose = filterWrap.querySelector('.modal__close');
+
+    sortHeader.addEventListener('click', (item) => {
+      sortHeader.classList.add('sort__header--active');
+      sortBody.classList.add('sort__body--active');
     });
-  });
 
-  // Кнопка фильтра
+    sortItem.forEach(item => {
+      item.addEventListener('click', function () {
+        sortHeader.classList.remove('sort__header--active');
+        sortBody.classList.remove('sort__body--active');
+        let text = this.innerText;
+        sortCurrent.innerText = text;
+      });
+    });
 
-  let filterWindow = document.querySelector('.rooms-catalog__filter'),
-    filterButton = document.querySelector('.rooms-catalog__button--filter'),
-    filterWrap = document.querySelector('.rooms-catalog__wrap'),
-    modalClose = document.querySelector('.modal__close');
 
-  filterButton.addEventListener('click', () => {
-    filterWindow.classList.add('rooms-catalog__filter--active');
-    filterWrap.classList.add('rooms-catalog__wrap--active');
-    body.classList.add('no-scroll');
+    // Кнопка фильтра
 
-  });
+    filterButton.addEventListener('click', () => {
+      filterWindow.classList.add('rooms-catalog__filter--active');
+      filterWrap.classList.add('rooms-catalog__wrap--active');
+      body.classList.add('lock');
 
-  modalClose.addEventListener('click', () => {
-    filterWindow.classList.remove('rooms-catalog__filter--active');
-    filterWrap.classList.remove('rooms-catalog__wrap--active');
-    body.classList.remove('no-scroll');
-  });
+    });
 
-  filterWrap.addEventListener('click', () => {
-    filterWindow.classList.remove('rooms-catalog__filter--active');
-    filterWrap.classList.remove('rooms-catalog__wrap--active');
-    body.classList.remove('no-scroll');
-  });
+    fillterClose.addEventListener('click', () => {
+      filterWindow.classList.remove('rooms-catalog__filter--active');
+      filterWrap.classList.remove('rooms-catalog__wrap--active');
+      body.classList.remove('lock');
+    });
 
-  filterWindow.addEventListener('click', (event) => {
-    event.stopPropagation();
-  });
+    filterWrap.addEventListener('click', () => {
+      filterWindow.classList.remove('rooms-catalog__filter--active');
+      filterWrap.classList.remove('rooms-catalog__wrap--active');
+      body.classList.remove('lock');
+    });
+
+    filterWindow.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+  }
+
+
+  // Модальное окно 
+
+  let singleRoom = document.querySelector('.room');
+
+  if (singleRoom) {
+
+    let orderFormBtn = document.querySelector('.room__btn'),
+      modalClose = document.querySelector('.modal__close'),
+      modalConfirm = document.querySelector('.modal__submit'),
+      modalWrap = document.querySelector('.modal'),
+      modalDialog = modalWrap.querySelector('.modal__dialog'),
+      modalThanks = document.querySelector('.modal__thanks'),
+      modalThanksBtn = document.querySelector('.modal__thanks--btn'),
+      modalThanksClose = modalThanks.querySelector('.modal__close');
+
+    orderFormBtn.addEventListener('click', (event) => {
+      showModal();
+    });
+
+    modalClose.addEventListener('click', () => {
+      closeModal();
+    });
+
+    modalWrap.addEventListener('click', () => {
+      closeModal();
+    });
+
+    modalDialog.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
+    modalConfirm.addEventListener('click', (event) => {
+      event.preventDefault();
+      confirm();
+
+    });
+
+    modalThanks.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
+    modalThanksBtn.addEventListener('click', () => {
+      event.preventDefault();
+      closeModal();
+    });
+
+    modalThanksClose.addEventListener('click', () => {
+      closeModal();
+    });
+
+    const closeModal = function () {
+      modalDialog.style.display = 'flex';
+      modalThanks.style.display = 'none';
+
+      modalWrap.classList.remove('modal__active');
+      body.classList.remove('lock');
+    };
+
+    const showModal = function () {
+
+      modalWrap.classList.add('modal__active');
+      body.classList.add('lock');
+    };
+
+    const confirm = function () {
+      modalDialog.style.display = 'none';
+      modalThanks.style.display = 'flex';
+    };
+
+  }
 });
+
 
 
 // Подключение карт 2Gis
