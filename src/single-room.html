@@ -44,7 +44,7 @@
           </li>
           <li class="room__list--item">Цена за сутки: <span class="room__price">600₽</span></li>
         </ul>
-        <a href="rooms.html" class="btn room__btn">Забронировать</a>
+        <div class="btn room__btn">Забронировать</div>
       </div>
     </div>
   </section>
@@ -107,16 +107,40 @@
 
   <div class="modal">
     <div class="modal__dialog">
+      <svg width="16" height="16" viewBox="0 0 16 16" class="modal__close" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L15 15M15 1L1 15" stroke="#1A212F" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      <img src="img/paw-big.svg" alt="" class="modal__dialog--paw">
       <h2 class="modal__title">Забронировать номер</h2>
       <form action="get" class="modal__form">
         <input type="text" class="modal__input" placeholder="Ваше имя">
         <input type="text" class="modal__input" placeholder="Имя Питомца">
         <input type="tel" class="modal__input" placeholder="Телефон">
         <input type="email" class="modal__input" placeholder="E-mail">
-        <input type="date" class="modal__input">
-        <input type="date" class="modal__input">
-        <input type="submit" class="modal__submit btn">
+        <div class="modal__row">
+          <span>Дата заезда</span>
+          <span>с</span>
+          <input type="date" class="modal__input">
+          <span>по</span>
+          <input type="date" class="modal__input">
+        </div>
+        <div class="modal__row--btn">
+          <button class="btn modal__submit">Отправить заявку</button>
+        </div>
       </form>
+
+    </div>
+
+    <div class="modal__thanks">
+      <img src="img/paw-big.svg" alt="" class="modal__thanks--paw">
+      <svg width="16" height="16" viewBox="0 0 16 16" class="modal__close" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L15 15M15 1L1 15" stroke="#1A212F" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      <h2 class="modal__title">Спасибо за заявку!</h2>
+      <p class="modal__description">Мы свяжемся с вами в ближайшее время</p>
+      <div class="btn modal__thanks--btn">OK</div>
     </div>
   </div>
 

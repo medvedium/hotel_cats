@@ -1,5 +1,5 @@
 .modal {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -8,21 +8,36 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 55;
 
   background-color: rgba($white, .8);
+
+  &__active {
+    display: flex;
+  }
 
   &__dialog {
     width: 100%;
     max-width: 570px;
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
+    position: relative;
 
     padding: 70px;
     background-color: $white;
     box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
     border-radius: 10px;
+
+    &--paw {
+      position: absolute;
+      left: -25px;
+      top: -18px;
+      width: 137px;
+  
+      transform: rotate(145deg);
+    }
   }
 
   &__title {
@@ -49,5 +64,75 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+    &::-webkit-input-placeholde {
+      color:$text;
+    }
+    &::-moz-placeholder         {
+      color:$text;
+    }/* Firefox 19+ */
+    &:-moz-placeholder          {
+      color:$text;
+    }/* Firefox 18- */
+    &:-ms-input-placeholder     {
+      color:$text;
+    }
   }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &--btn {
+      justify-content: center;
+    }
+  }
+
+  &__input[type="date"] {
+    width: 129px;
+    margin-bottom: 0;
+  }
+
+  &__submit {
+    width: 230px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__thanks {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    background-color: $white;
+    box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 570px;
+    padding-top: 70px;
+    padding-bottom: 43px;
+
+    & .modal__title {
+      margin-bottom: 25px;
+    }
+
+    &--paw {
+      position: absolute;
+      left: -20px;
+      bottom: -10px;
+      width: 137px;
+  
+      transform: rotate(35deg);
+    }
+  }
+
+
 }
