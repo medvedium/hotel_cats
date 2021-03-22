@@ -13,6 +13,6 @@
 
 
 
-**GitHub Pages** 
+**Демонстрация на GitHub Pages** 
 - https://medvedium.github.io/hotel_cats/
 
